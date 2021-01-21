@@ -59,8 +59,11 @@ while ($dataDrag_Drop = mysqli_fetch_assoc($resultadodrag_drop)) { ?>
 
     </div>
     <?php } ?>
+
+    <div id="resp"></div>
+
   </div>
-     
+
 
 
 <script type="text/javascript" charset="utf-8" src="assets/js/jquery-3.3.1.min.js"></script>

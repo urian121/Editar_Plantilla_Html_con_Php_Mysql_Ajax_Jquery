@@ -1,43 +1,45 @@
 //EDITANDO LA PROFESION
 $(document).ready(function() {
     $( ".editar" ).click(function() {
-        var id    = $(this).attr("id");
-        var dato  = $('#profesion').text(); 
-        var value = $('.editable' + id).attr('contenteditable');
+        var id             = $(this).attr("id");
+        var datoProfesion  = $('#profesion').text(); 
+        var value          = $('.editable' + id).attr('contenteditable');
     
-        console.log(id + value);
+        //console.log(id + value);
     
      if (value != 'true') {
-            console.log('true');
+            //console.log('true');
             $('.editable' + id).attr('contenteditable','true');
             $('.editar').hide();
             $('.guardar' + id).show();
             
             //$(".drop__data").css("color", "green");
-            $(".entrar" + id).addClass("activa");
+            $(".entrar" + id).addClass("activa"); //Agrego una clase
+            $(".barra").addClass("btn_seleccionado"); //AGREGO CLASE PARA MOSTRAR LA SECCION ACTIVADA 
             $(".editable" + id).focus();
         }
         else {
-            console.log('false');
+            //console.log('false');
             $('.editable' + id).attr('contenteditable','false');
             $('.btn_edit' + id).show();
             $('.guardar' + id).hide();
              
             $('.edit').show();
-            $(".entrar" + id).removeClass("activa");
-    
-           /* var dataString = 'valor='+ dato;
-            console.log(dataString);
-            url = "data.php";
+            $(".entrar" + id).removeClass("activa"); //quito la clase
+            $(".barra").removeClass("btn_seleccionado"); //quito la clase del elemento seleccionado
+            
+            var dataStringProfesion = 'id='+ id + '&profesion=' + datoProfesion;
+            url = "dataProfesion.php";
              $.ajax({
                    type: "POST",
                    url: url,
-                   data: dataString,
+                   data: dataStringProfesion,
                    success: function(data)
                    {
                      $('#resp').html(data);
+                    // console.log(data);
                    }
-               }); */
+               }); 
         }
     });
     });
