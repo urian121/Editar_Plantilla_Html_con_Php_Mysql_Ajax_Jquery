@@ -2,8 +2,7 @@
 *,::before,::after{
   box-sizing: border-box;
 }
-
-  body{
+body{
     margin: 0;
     padding: 0;
     font-family: 'Ubuntu', sans-serif;
@@ -52,33 +51,7 @@
     font-size: 1rem;
     color: #272A3A;
     font-weight: 500;
-  }
-  
-  .drop__profession{
-    font-size: .813rem;
-    color: #8A8EAA;
-  }
-  
-  .drop__social{
-    margin: 0 .375rem;
-    color: #8A8EAA;
-    transition: .4s;
-  }
-  
-  .drop__social:hover{
-    color: #272A3A;
-  }
-  
-  /* Class name for the chosen item */
-  .sortable-chosen{
-    box-shadow: 8px 8px 32px #E1E1E1;
-  }
-  
-  /* Class name for the dragging item */
-  .sortable-drag{
-    opacity: 0;
-  }
-  
+  } 
 
   .circulo {
     width: 30px;

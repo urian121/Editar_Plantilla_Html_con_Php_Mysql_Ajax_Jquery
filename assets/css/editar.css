@@ -1,0 +1,45 @@
+body {
+    margin:0;
+    padding:0
+}
+.edit {
+display:inline;
+float:left;
+position:relative;
+/*border: 1px dashed #333;*/
+}
+.guardar {
+display:inline;
+float:left;
+position:relative;
+}
+.barra {
+position:absolute;
+top:0;
+right:15px;
+display:none; /*ocultando la barra*/
+}
+.edit:hover .barra {
+display:block;
+background-color: rgba(0, 0, 0, .2);
+color: #333 !important;
+}
+.barra a.editar, a.guardar {
+display:block;
+padding:5px 25px 5px 20px;
+font-size:12px;
+color:#333;
+text-decoration:none;
+font-weight: bold;
+}
+
+.zmdi-edit, .zmdi-refresh-sync{
+color: green;
+font-weight: bold;
+padding: 0px 10px 0px 0px;
+}
+.activa{
+color:green;
+box-shadow:0px 0px 1px green;
+}
+
