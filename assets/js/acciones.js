@@ -2,10 +2,10 @@
 $(document).ready(function() {
     $( ".editar" ).click(function() {
         var id             = $(this).attr("id");
-        var datoProfesion  = $('#profesion').text(); 
+        var datoProfesion  = $('#profesion' + id).text(); 
         var value          = $('.editable' + id).attr('contenteditable');
     
-        //console.log(id + value);
+        console.log(id + datoProfesion);
     
      if (value != 'true') {
             //console.log('true');
@@ -29,6 +29,7 @@ $(document).ready(function() {
             $(".barra").removeClass("btn_seleccionado"); //quito la clase del elemento seleccionado
             
             var dataStringProfesion = 'id='+ id + '&profesion=' + datoProfesion;
+            console.log(dataStringProfesion);
             url = "dataProfesion.php";
              $.ajax({
                    type: "POST",

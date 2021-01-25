@@ -24,34 +24,34 @@
 
 <?php
 require_once ('config.php');
-$Querydrag_drop      = ("SELECT * FROM drag_drop ORDER BY posicion");
-$resultadodrag_drop  = mysqli_query($con, $Querydrag_drop);
+$QueryPlantilla      = ("SELECT * FROM plantilla ORDER BY id");
+$resultadoPlantilla  = mysqli_query($con, $QueryPlantilla);
 ?>
 
 
 
 <?php
-while ($dataDrag_Drop = mysqli_fetch_assoc($resultadodrag_drop)) { ?>
+while ($dataPlantilla = mysqli_fetch_assoc($resultadoPlantilla)) { ?>
     <div class="col-md-6 col-lg-4 edit">
-        <div class="drop__card entrar<?php echo $dataDrag_Drop['id']; ?>">
+        <div class="drop__card entrar<?php echo $dataPlantilla['id']; ?>">
             <div class="drop__data">
-                <img src="assets/img/<?php echo $dataDrag_Drop['imagen']; ?>" alt="" class="drop__img">
+                <img src="assets/img/<?php echo $dataPlantilla['imagen']; ?>" alt="" class="drop__img">
                 <div>
-                    <h1 class="drop__name"><?php echo $dataDrag_Drop['nombre']; ?></h1>
-                    <span class="drop__profession editable<?php echo $dataDrag_Drop['id']; ?>" id="profesion"><?php echo $dataDrag_Drop['profesion']; ?></span>
+                    <h1 class="drop__name"><?php echo $dataPlantilla['nombre']; ?></h1>
+                    <span class="drop__profession editable<?php echo $dataPlantilla['id']; ?>" id="profesion<?php echo $dataPlantilla['id']; ?>"><?php echo $dataPlantilla['profesion']; ?></span>
                 </div>
             </div>
             <div class="circulo">
-                <h2><?php echo $dataDrag_Drop['id']; ?> </h2>
+                <h2><?php echo $dataPlantilla['id']; ?> </h2>
             </div>            
         </div>
 
         <div class="barra">
-        <a href="#" class="editar edit btn_edit<?php echo $dataDrag_Drop['id']; ?>" id="<?php echo $dataDrag_Drop['id']; ?>">
+        <a href="#" class="editar edit btn_edit<?php echo $dataPlantilla['id']; ?>" id="<?php echo $dataPlantilla['id']; ?>">
             <i class="zmdi zmdi-edit"> </i>
             EDITAR
         </a>
-        <a href="#" class="editar save guardar<?php echo $dataDrag_Drop['id']; ?>" style="display: none;" id="<?php echo $dataDrag_Drop['id']; ?>">
+        <a href="#" class="editar save guardar<?php echo $dataPlantilla['id']; ?>" style="display: none;" id="<?php echo $dataPlantilla['id']; ?>">
             <i class="zmdi zmdi-refresh-sync"> </i>
             GUARDAR
         </a>
