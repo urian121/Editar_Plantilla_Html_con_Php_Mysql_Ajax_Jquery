@@ -40,6 +40,7 @@ body{
   }
   
   .drop__img{
+    position: relative;
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -49,7 +50,7 @@ body{
   
   .drop__name{
     font-size: 1rem;
-    color: #272A3A;
+    /*color: #272A3A;*/
     font-weight: 500;
   } 
 

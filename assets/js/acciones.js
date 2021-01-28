@@ -1,7 +1,9 @@
 //EDITANDO LA PROFESION
 $(document).ready(function() {
+
     $( ".editar" ).click(function() {
         var id             = $(this).attr("id");
+        var nombre         = $('#nombre' + id).text();
         var datoProfesion  = $('#profesion' + id).text(); 
         var value          = $('.editable' + id).attr('contenteditable');
     
@@ -14,9 +16,12 @@ $(document).ready(function() {
             $('.guardar' + id).show();
             
             //$(".drop__data").css("color", "green");
-            $(".entrar" + id).addClass("activa"); //Agrego una clase
+            $("#nombre" + id).addClass("nombreActivo"); //Agrego clase para el nombre
+            $(".entrar" + id).addClass("borderActivo"); //Agrego una clase
+            $(".perfil" + id).addClass("perfilActivo"); //Agrego una clase para la imagen
+            $("#imagen" + id).css("display", "block"); //Mostrando para cargar la nueva imagen
             $(".barra").addClass("btn_seleccionado"); //AGREGO CLASE PARA MOSTRAR LA SECCION ACTIVADA 
-            $(".editable" + id).focus();
+            $("#nombre" + id).focus();
         }
         else {
             //console.log('false');
@@ -25,12 +30,16 @@ $(document).ready(function() {
             $('.guardar' + id).hide();
              
             $('.edit').show();
-            $(".entrar" + id).removeClass("activa"); //quito la clase
+            $("#nombre" + id).removeClass("nombreActivo");
+            $(".entrar" + id).removeClass("borderActivo"); //quito la clase
+            $(".perfil" + id).removeClass("perfilActivo"); //quito la clase
+            $("#imagen" + id).css("display", "none"); //Mostrando para cargar la nueva imagen
+            $("#imagen").hide(); //Ocultando para cargar el boton de imagen
             $(".barra").removeClass("btn_seleccionado"); //quito la clase del elemento seleccionado
             
-            var dataStringProfesion = 'id='+ id + '&profesion=' + datoProfesion;
-            console.log(dataStringProfesion);
-            url = "dataProfesion.php";
+            var dataStringProfesion = 'id='+ id + '&profesion=' + datoProfesion + '&nombre=' + nombre;
+            //console.log(dataStringProfesion);
+            url = "dataInputs.php";
              $.ajax({
                    type: "POST",
                    url: url,
@@ -43,4 +52,10 @@ $(document).ready(function() {
                }); 
         }
     });
-    });
+
+
+
+
+
+
+});
