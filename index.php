@@ -32,7 +32,7 @@
      </nav>
     
 <div class="container top">
-<h3 class="text-center mt-5"> Editar Plantilla HTML con PHP - MYSQL- AJAX - JAVASCRIPT y JQUERY </h3>
+<h3 class="text-center mt-5"><br> Editar Plantilla HTML con PHP - MYSQL- AJAX - JAVASCRIPT y JQUERY </h3>
 <hr><br>
 
 <?php

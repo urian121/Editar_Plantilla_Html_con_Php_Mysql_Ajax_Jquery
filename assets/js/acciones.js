@@ -1,4 +1,4 @@
-//EDITANDO LA PROFESION
+//EDITANDO LA PLANTILLA
 $(document).ready(function() {
 
     $( ".editar" ).click(function() {
@@ -6,8 +6,7 @@ $(document).ready(function() {
         var nombre         = $('#nombre' + id).text();
         var datoProfesion  = $('#profesion' + id).text(); 
         var value          = $('.editable' + id).attr('contenteditable');
-    
-        console.log(id + datoProfesion);
+
     
      if (value != 'true') {
             //console.log('true');
@@ -15,7 +14,6 @@ $(document).ready(function() {
             $('.editar').hide();
             $('.guardar' + id).show();
             
-            //$(".drop__data").css("color", "green");
             $("#nombre" + id).addClass("nombreActivo"); //Agrego clase para el nombre
             $(".entrar" + id).addClass("borderActivo"); //Agrego una clase
             $(".perfil" + id).addClass("perfilActivo"); //Agrego una clase para la imagen
@@ -37,13 +35,13 @@ $(document).ready(function() {
             $("#imagen").hide(); //Ocultando para cargar el boton de imagen
             $(".barra").removeClass("btn_seleccionado"); //quito la clase del elemento seleccionado
             
-            var dataStringProfesion = 'id='+ id + '&profesion=' + datoProfesion + '&nombre=' + nombre;
+            var dataStringPlantilla = 'id='+ id + '&profesion=' + datoProfesion + '&nombre=' + nombre;
             //console.log(dataStringProfesion);
             url = "dataInputs.php";
              $.ajax({
                    type: "POST",
                    url: url,
-                   data: dataStringProfesion,
+                   data: dataStringPlantilla,
                    success: function(data)
                    {
                      $('#resp').html(data);
@@ -52,10 +50,5 @@ $(document).ready(function() {
                }); 
         }
     });
-
-
-
-
-
 
 });
